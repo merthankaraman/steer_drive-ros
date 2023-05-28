@@ -1,0 +1,15 @@
+<launch>
+
+  <rosparam file="$(find steer_drive_description)/launch/Controller/gazebo_controller.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="steer_drive" args="rear_drive_vel_motor_controller rear_steer_pos_motor_controller joint_state_controller "/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/steer_drive/joint_states"/>
+  </node>
+
+  <rosparam file="$(find steer_drive_description)/src/ros_steer_drive_paramaters.yaml" command="load"/>
+
+  <node name="ros_steer_drive_gazebo_controller" pkg="steer_drive_description" type="ros_steer_drive.py" output="screen"/>
+
+  <node name="steer_drive_topic_node" pkg="steer_drive_autonomous" type="steer_drive_topic_node" output="screen"/>
+  <rosparam file="$(find steer_drive_autonomous)/src/steer_drive_topic_paramaters.yaml" command="load"/>
+</launch>

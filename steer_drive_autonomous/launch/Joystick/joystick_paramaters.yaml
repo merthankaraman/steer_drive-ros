@@ -1,0 +1,4 @@
+user_param_joystick_use: true
+user_param_joystick_wireless: true
+user_param_steer_control: true
+user_param_steer_soft_motion: true

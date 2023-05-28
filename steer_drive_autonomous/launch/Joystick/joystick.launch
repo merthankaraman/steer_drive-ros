@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find steer_drive_autonomous)/launch/Joystick/ds4_node.launch"/>
+    <node name="joystick_cmd_vel" pkg="steer_drive_autonomous" type="joystick_cmd_vel.py" output="screen"/>
+    
+<rosparam file="$(find steer_drive_autonomous)/launch/Joystick/joystick_paramaters.yaml" command="load"/>
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro $(find steer_drive_description)/urdf/steer_drive.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model steer_drive -x 0.3 "/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find steer_drive_description)/worlds/world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <include file="$(find steer_drive_description)/launch/display.launch"/>
+  <include file="$(find steer_drive_description)/launch/Controller/gazebo_controller.launch"/>
+</launch>

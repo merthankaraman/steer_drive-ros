@@ -1,0 +1,283 @@
+<?xml version="1.0" ?>
+<robot name="steer_drive" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find steer_drive_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find steer_drive_description)/urdf/steer_drive.trans" />
+<xacro:include filename="$(find steer_drive_description)/urdf/steer_drive.gazebo" />
+
+<link name="base_footprint"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint> 
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.004894653541401669 -1.2125126773511758e-17 0.04142676341755822" rpy="0 0 0"/>
+    <mass value="2.944106705966295"/>
+    <inertia ixx="0.003408" iyy="0.004707" izz="0.00774" ixy="-0.0" iyz="-0.0" ixz="-0.000232"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="0.0 -3.901291635943797e-18 0.0072778660919538" rpy="0 0 0"/>
+    <mass value="0.01930579331641016"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="4e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.045 -0.0 -0.0655" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.045 -0.0 -0.0655" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.0034850227833493203 4.121538431164246e-13 0.0" rpy="0 0 0"/>
+    <mass value="0.008449044106402657"/>
+    <inertia ixx="2e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.070711 -0.0 -0.0495" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.070711 -0.0 -0.0495" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="imu_1">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0025000000000000022" rpy="0 0 0"/>
+    <mass value="0.0013992000416994097"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.0495" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.0495" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arka_hareket_teker_1">
+  <inertial>
+    <origin xyz="1.7424950371491832e-13 -4.996003610813204e-18 0.0" rpy="0 0 0"/>
+    <mass value="0.018496126748009642"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.06 -0.0 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/arka_hareket_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.06 -0.0 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/arka_hareket_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="on_hareket_teker_1">
+  <inertial>
+    <origin xyz="1.7428419818443786e-13 0.0 -7.112366251504909e-17" rpy="0 0 0"/>
+    <mass value="0.018496126748009642"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 0.045 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_hareket_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 0.045 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_hareket_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arka_donus_teker_1">
+  <inertial>
+    <origin xyz="6.938893903907228e-18 2.1649348980190553e-17 -0.008733878241274397" rpy="0 0 0"/>
+    <mass value="0.04449273765251855"/>
+    <inertia ixx="5e-06" iyy="3e-06" izz="4e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.06 -0.0 -0.0275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/arka_donus_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.06 -0.0 -0.0275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/arka_donus_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="on_donus_teker_1">
+  <inertial>
+    <origin xyz="-6.938893903907228e-18 6.938893903907228e-18 -0.00873387824127446" rpy="0 0 0"/>
+    <mass value="0.04449273765251855"/>
+    <inertia ixx="5e-06" iyy="3e-06" izz="4e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 0.045 -0.0275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_donus_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 0.045 -0.0275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_donus_teker_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="on_donus_teker_2">
+  <inertial>
+    <origin xyz="-6.938893903907228e-18 1.3877787807814457e-17 -0.00873387824127446" rpy="0 0 0"/>
+    <mass value="0.04449273765251855"/>
+    <inertia ixx="5e-06" iyy="3e-06" izz="4e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 -0.045 -0.0275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_donus_teker_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 -0.045 -0.0275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_donus_teker_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="on_hareket_teker_2">
+  <inertial>
+    <origin xyz="1.74273789843582e-13 2.0816681711721685e-17 -6.071532165918825e-17" rpy="0 0 0"/>
+    <mass value="0.018496126748009642"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03 -0.045 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_hareket_teker_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.03 -0.045 -0.01" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://steer_drive_description/meshes/on_hareket_teker_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="0.045 0.0 0.0655" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="0.070711 0.0 0.0495" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="Rigid 8" type="fixed">
+  <origin xyz="0.0 0.0 0.0495" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="imu_1"/>
+</joint>
+
+<joint name="rear_drive_vel_motor" type="continuous">
+  <origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"/>
+  <parent link="arka_donus_teker_1"/>
+  <child link="arka_hareket_teker_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="front_right_drive" type="continuous">
+  <origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"/>
+  <parent link="on_donus_teker_1"/>
+  <child link="on_hareket_teker_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rear_steer_pos_motor" type="continuous">
+  <origin xyz="-0.06 0.0 0.0275" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arka_donus_teker_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="front_right_steer" type="fixed">
+  <origin xyz="0.03 -0.045 0.0275" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="on_donus_teker_1"/>
+</joint>
+
+<joint name="front_left_steer" type="fixed">
+  <origin xyz="0.03 0.045 0.0275" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="on_donus_teker_2"/>
+</joint>
+
+<joint name="front_left_drive" type="continuous">
+  <origin xyz="0.0 0.0 -0.0175" rpy="0 0 0"/>
+  <parent link="on_donus_teker_2"/>
+  <child link="on_hareket_teker_2"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+</robot>

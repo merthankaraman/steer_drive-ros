@@ -1,0 +1,3 @@
+<launch>
+  <node name="steer_can_communication_node" pkg="steer_drive_autonomous" type="steer_can_communication_node" output="screen"/>
+</launch>

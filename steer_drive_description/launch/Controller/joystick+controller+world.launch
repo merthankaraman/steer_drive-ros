@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find steer_drive_description)/launch/Controller/controller+world.launch"/>
+  <include file="$(find steer_drive_description)/launch/display.launch"/>
+  <include file="$(find steer_drive_description)/launch/Controller/gazebo_controller.launch"/>
+  <include file="$(find steer_drive_autonomous)/launch/Joystick/joystick.launch"/>
+</launch>

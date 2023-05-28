@@ -1,0 +1,15 @@
+steer_drive:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controllers --------------------------------------
+  rear_drive_vel_motor_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: rear_drive_vel_motor
+#    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rear_steer_pos_motor_controller:
+    type: position_controllers/JointPositionController
+    joint: rear_steer_pos_motor
+#    pid: {p: 100.0, i: 0.01, d: 10.0}

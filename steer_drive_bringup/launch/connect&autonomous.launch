@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find steer_drive_bringup)/launch/steer_drive_robot.launch"/>
+  <include file="$(find steer_drive_autonomous)/launch/main_nodes.launch"/>
+  <include file="$(find steer_drive_bringup)/launch/display.launch"/>
+  
+</launch>
