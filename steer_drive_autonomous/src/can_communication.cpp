@@ -24,18 +24,18 @@
 using namespace std;
 
 
-int s;
+int sockett;
 struct sockaddr_can addr;
 struct ifreq ifr;
 struct can_frame frame;
 
 
 void can_send_motor(float speed, float angle){
-    float s = speed, a = angle;
+    float sp = speed, a = angle;
     frame.can_id = 0x17;
-    memcpy(frame.data, &s, 4);
+    memcpy(frame.data, &sp, 4);
     memcpy(&frame.data[4], &a, 4);
-    write(s, &frame, sizeof(struct can_frame));
+    write(sockett, &frame, sizeof(struct can_frame));
     //cout << "data send "<< endl;
 }
 
@@ -69,15 +69,15 @@ void motorsCallback(const steer_drive_autonomous::actuators& data){
 }
 
 int main(int argc, char** argv){
-    s = socket(PF_CAN, SOCK_RAW, CAN_RAW);
+    sockett = socket(PF_CAN, SOCK_RAW, CAN_RAW);
 
     strcpy(ifr.ifr_name, "can0" ); // VCAN0 arayüzünün adı
-    ioctl(s, SIOCGIFINDEX, &ifr);
+    ioctl(sockett, SIOCGIFINDEX, &ifr);
 
     addr.can_family = AF_CAN;
     addr.can_ifindex = ifr.ifr_ifindex;
 
-    bind(s, (struct sockaddr *)&addr, sizeof(addr));
+    bind(sockett, (struct sockaddr *)&addr, sizeof(addr));
 
     frame.can_id = 0x17;
     frame.can_dlc = 8;
