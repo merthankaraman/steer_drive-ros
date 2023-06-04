@@ -31,4 +31,3 @@ sudo apt install ros-noetic-rosbridge-server -y
 sudo apt-get install ros-noetic-gmapping -y
 sudo apt-get install ros-noetic-slam-* -y
 ````
-# Yenilikler

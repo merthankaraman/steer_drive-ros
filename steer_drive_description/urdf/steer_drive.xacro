@@ -23,7 +23,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="orange"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -44,7 +44,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="red"/>
   </visual>
   <collision>
     <origin xyz="-0.045 -0.0 -0.0655" rpy="0 0 0"/>
@@ -65,7 +65,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.070711 -0.0 -0.0495" rpy="0 0 0"/>
@@ -86,7 +86,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.0495" rpy="0 0 0"/>
@@ -107,7 +107,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/arka_hareket_teker_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="0.06 -0.0 -0.01" rpy="0 0 0"/>
@@ -128,7 +128,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/on_hareket_teker_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="-0.03 0.045 -0.01" rpy="0 0 0"/>
@@ -149,7 +149,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/arka_donus_teker_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="green"/>
   </visual>
   <collision>
     <origin xyz="0.06 -0.0 -0.0275" rpy="0 0 0"/>
@@ -170,7 +170,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/on_donus_teker_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="orange"/>
   </visual>
   <collision>
     <origin xyz="-0.03 0.045 -0.0275" rpy="0 0 0"/>
@@ -191,7 +191,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/on_donus_teker_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="orange"/>
   </visual>
   <collision>
     <origin xyz="-0.03 -0.045 -0.0275" rpy="0 0 0"/>
@@ -212,7 +212,7 @@
     <geometry>
       <mesh filename="package://steer_drive_description/meshes/on_hareket_teker_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="black"/>
   </visual>
   <collision>
     <origin xyz="-0.03 -0.045 -0.01" rpy="0 0 0"/>
