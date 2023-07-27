@@ -1,8 +1,11 @@
 <launch>
+  <!--
   <include file="$(find steer_drive_bringup)/launch/steer_drive_lidar.launch"/>
   <include file="$(find steer_drive_bringup)/launch/steer_drive_camera.launch"/>
+
   <include file="$(find steer_drive_bringup)/launch/steer_drive_can.launch"/>
-  
+  -->
+  <include file="$(find steer_drive_bringup)/launch/steer_drive_rosserial.launch"/>
   <node name="steer_drive_topic_node" pkg="steer_drive_autonomous" type="steer_drive_topic_node" output="screen"/>
   <rosparam file="$(find steer_drive_autonomous)/src/steer_drive_topic_paramaters.yaml" command="load"/>
   
