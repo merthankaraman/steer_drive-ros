@@ -92,7 +92,7 @@ int main(int argc, char** argv){
     ros::Rate rate(20);
     while (ros::ok())
     {
-        send_sensors(pub);
+        //send_sensors(pub);
         rate.sleep();
         ros::spinOnce();
     }
